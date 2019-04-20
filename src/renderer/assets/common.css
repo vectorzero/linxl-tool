@@ -1,0 +1,5 @@
+/* 自定义element-ui */
+
+.el-menu {
+	border-right: 0!important;
+}
