@@ -1,5 +1,8 @@
 <template>
   <div class="color-wrap">
+    <!-- <input type="file" ref="file">
+    <button @click="matting">开始抠图</button> -->
+    <!-- <img src="C:\Users\linxi\Desktop\杂\图片\未标题-1.jpg" /> -->
     <div class="form-wrap">
       <div class="rgb-wrap">
         <md-field md-clearable>
@@ -44,6 +47,12 @@ export default {
     };
   },
   methods: {
+    // matting() {
+    //   let file = this.$refs.file.files[0];
+    //   console.log(11,file)
+    //   // var mat = new Matting(file);
+    //   // mat.createStream();
+    // },
     focusRgb() {
       this.isFocusRgb = true;
       this.isFocusHex = false;
