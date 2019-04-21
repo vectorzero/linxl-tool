@@ -9,7 +9,7 @@
 
     <md-drawer :md-active.sync="showNavigation">
       <md-toolbar class="md-transparent" md-elevation="0">
-        <span class="md-title">linxl-tool</span>
+        <span class="md-title" @click="jumpToPage('/',-1,'')">linxl-tool</span>
       </md-toolbar>
 
       <md-list class="menu-wrap">
@@ -21,7 +21,10 @@
     </md-drawer>
 
     <md-content class="content-wrap">
-      <router-view></router-view>
+      <router-view v-if="this.$route.path !== '/'"></router-view>
+      <div class="index-wrap" v-else>
+        <p>LINXIANLIANG</p>
+      </div>
     </md-content>
   </div>
 </template>
@@ -31,7 +34,7 @@ export default {
   data() {
     return {
       activeName: '',
-      activeIndex: 0,
+      activeIndex: -1,
       showNavigation: false,
       menuList: [
         { name: "宽高比", icon: "move_to_inbox", path: "/aspectRatio" },
@@ -41,7 +44,7 @@ export default {
     };
   },
   mounted() {
-    this.activeName = this.menuList[0].name;
+    
   },
   methods: {
     jumpToPage(path,index,name) {
@@ -68,19 +71,28 @@ export default {
 .active-item {
   background: #ccc;
 }
-
 .md-drawer {
   width: 230px;
 }
 .md-list {
   padding: 0;
 }
+.md-transparent {
+  cursor: pointer;
+}
 .menu-wrap {
   cursor: pointer;
 }
-
 .content-wrap {
   height: calc(100vh - 64px);
+}
+.index-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 100px;
+  color: gray;
 }
 
 </style>

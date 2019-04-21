@@ -4,9 +4,6 @@ import axios from 'axios'
 import App from './App'
 import router from './router'
 import store from './store'
-// import ElementUI from 'element-ui';
-// import 'element-ui/lib/theme-chalk/index.css';
-// Vue.use(ElementUI,{ size: 'small'});
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/black-green-light.css'
